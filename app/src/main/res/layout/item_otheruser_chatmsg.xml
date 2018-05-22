@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp40"
+        android:background="@mipmap/cht_bx_gray">
+
+        <TextView
+            android:id="@+id/txt_othrUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="@dimen/dp10"
+            android:paddingRight="@dimen/dp10"
+            android:paddingTop="@dimen/dp10"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13.4sp" />
+
+
+        <TextView
+            android:id="@+id/txt_otherUserChatMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_othrUserName"
+            android:lineSpacingMultiplier="1.25"
+            android:padding="@dimen/dp10"
+            android:textColor="@color/text_color"
+            android:textSize="15.4sp" />
+
+    </RelativeLayout>
+
+    <com.ossul.view.CircularImageView
+        android:id="@+id/civ_otherUserIconChatMsg"
+        android:layout_width="@dimen/circular_image_in_listitem"
+        android:layout_height="@dimen/circular_image_in_listitem"
+        android:src="@mipmap/placeholder" />
+
+
+</RelativeLayout>

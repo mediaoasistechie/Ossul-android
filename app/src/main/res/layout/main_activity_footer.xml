@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/height_footer"
+    android:layout_margin="@dimen/dp5"
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:weightSum="3">
+
+    <LinearLayout
+        android:id="@+id/tv_submit_request"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/footer_color_selector"
+        android:clickable="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_submit_request_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp5"
+            android:drawableTop="@drawable/icon_submit_request_selector"
+            android:duplicateParentState="true"
+            android:singleLine="true"
+            android:text="Submit Request"
+            android:textColor="@drawable/footer_txt_color_selector"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tv_my_request"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/footer_color_selector"
+        android:clickable="true"
+        android:drawablePadding="@dimen/dp5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_my_request_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawableTop="@drawable/icon_my_request_selector"
+            android:duplicateParentState="true"
+            android:singleLine="true"
+            android:drawablePadding="@dimen/dp5"
+            android:text="My Request"
+            android:textColor="@drawable/footer_txt_color_selector"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tv_submit_offer"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/footer_color_selector"
+        android:clickable="true"
+        android:drawablePadding="@dimen/dp5"
+        android:gravity="center"
+        android:orientation="vertical">
+
+
+        <TextView
+            android:id="@+id/tv_submit_offer_footer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:drawablePadding="@dimen/dp5"
+            android:drawableTop="@drawable/icon_submit_offer_selector"
+            android:duplicateParentState="true"
+            android:singleLine="true"
+            android:text="Submit Offer"
+            android:textColor="@drawable/footer_txt_color_selector"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+</LinearLayout>

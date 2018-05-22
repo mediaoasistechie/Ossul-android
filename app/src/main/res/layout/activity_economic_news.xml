@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_header"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_alignParentTop="true"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tv_header_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/dp5"
+            android:layout_toRightOf="@+id/iv_back"
+            android:text="@string/economic_news"
+            android:gravity="left"
+            android:layout_toLeftOf="@+id/iv_add_news"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/iv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:paddingLeft="10dp"
+            android:paddingRight="15dp"
+            android:src="@mipmap/icon_back_black" />
+
+        <ImageView
+            android:id="@+id/iv_add_news"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerInParent="true"
+            android:padding="10dp"
+            android:src="@mipmap/icon_add_new" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_search_filter"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_below="@+id/rl_header"
+        android:background="#E1E1EB"
+        android:orientation="horizontal"
+        android:paddingBottom="7dp"
+        android:paddingTop="7dp"
+        android:visibility="visible"
+        android:weightSum="1">
+
+        <RelativeLayout
+            android:id="@+id/rl_country"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/search_bg"
+            android:padding="5dp"
+            android:visibility="visible">
+
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_country"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_toLeftOf="@+id/iv_arrow_country"
+                android:layout_centerVertical="true"
+                android:background="@null"
+                android:clickable="false"
+                android:spinnerMode="dialog">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <ImageView
+                android:id="@+id/iv_arrow_country"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:rotation="90"
+                android:src="@mipmap/icon_arrow_right_menu" />
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.ossul.view.CustomSwipeRefreshLayout
+        android:id="@+id/customRefreshLayout"
+        android:layout_width="match_parent"
+        android:paddingBottom="5dp"
+        android:background="#E5E5E5"
+        android:layout_above="@+id/rl_loader"
+        android:paddingTop="5dp"
+        android:layout_height="match_parent"
+        android:layout_below="@id/ll_search_filter">
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_real_estate_news"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="visible" />
+
+    </com.ossul.view.CustomSwipeRefreshLayout>
+
+    <include
+        android:id="@+id/rl_loader"
+        layout="@layout/layout_bottom_loader" />
+
+    <RelativeLayout
+        android:id="@+id/back_dim_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        android:visibility="gone" >
+    </RelativeLayout>
+</RelativeLayout>

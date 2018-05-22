@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:rsb="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_below="@+id/rl_header">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#F8F8FA"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/dp10"
+        android:paddingRight="10dp"
+        android:weightSum="1">
+
+
+        <RelativeLayout
+            android:id="@+id/rl_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_background_profile">
+
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_country"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:spinnerMode="dropdown">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:rotation="90"
+                android:src="@mipmap/icon_arrow_right_menu" />
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/rl_city"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_background_profile">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_city"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:spinnerMode="dropdown">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:rotation="90"
+                android:src="@mipmap/icon_arrow_right_menu" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_background_profile">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_sale_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:spinnerMode="dropdown">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:rotation="90"
+                android:src="@mipmap/icon_arrow_right_menu" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/et_background_profile">
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_property_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:spinnerMode="dropdown">
+
+            </android.support.v7.widget.AppCompatSpinner>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10dp"
+                android:clickable="false"
+                android:focusableInTouchMode="false"
+                android:rotation="90"
+                android:src="@mipmap/icon_arrow_right_menu" />
+        </RelativeLayout>
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rv_zone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp">
+
+        </android.support.v7.widget.RecyclerView>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider_color" />
+
+        <TextView
+            android:id="@+id/tv_price_range"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="15dp"
+            android:layout_weight="0.02"
+            android:gravity="left"
+            android:text="Price Range"
+            android:textColor="@color/text_color"
+            android:textSize="13.4sp"
+            android:textStyle="bold" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <org.florescu.android.rangeseekbar.RangeSeekBar
+                android:id="@+id/range_seekbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                rsb:absoluteMaxValue="10000000000"
+                rsb:absoluteMinValue="0"
+                rsb:activeColor="@color/colorAccent"
+                rsb:barHeight="5dp"
+                rsb:defaultColor="@color/colorPrimaryDark"
+                rsb:internalPadding="0dp"
+                rsb:showLabels="false" />
+
+            <TextView
+                android:id="@+id/tv_max"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/et_shape_all_corner"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:paddingLeft="@dimen/dp5"
+                android:paddingRight="@dimen/dp5"
+                android:text="10000000000"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_min"
+                android:layout_width="wrap_content"
+                android:layout_height="21dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="5dp"
+                android:background="@drawable/et_shape_all_corner"
+                android:gravity="center"
+                android:minWidth="50dp"
+                android:paddingLeft="@dimen/dp5"
+                android:paddingRight="@dimen/dp5"
+                android:text="0"
+                android:textSize="14sp" />
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/divider_color" />
+
+        <EditText
+            android:id="@+id/et_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dp15"
+            android:background="@drawable/et_background_profile"
+            android:gravity="left|top"
+            android:hint="Describe what you need"
+            android:maxLines="6"
+            android:minLines="6"
+            android:textSize="14sp"
+            android:textStyle="italic" />
+
+        <TextView
+            android:id="@+id/tv_submit"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="@dimen/dp25"
+            android:layout_marginRight="@dimen/dp25"
+            android:layout_marginTop="@dimen/dp25"
+            android:background="@drawable/yellow_btn_selector"
+            android:gravity="center"
+            android:text="Submit"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+</ScrollView>

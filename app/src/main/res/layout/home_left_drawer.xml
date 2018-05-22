@@ -1,0 +1,748 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/slider_drawer_root"
+    android:layout_width="@dimen/menu_drawer_width"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:id="@+id/rl_main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/menu_upper_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="15dp"
+            android:layout_marginTop="@dimen/dp20"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_user_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/dp30"
+                android:text="Yehya Hafez"
+                android:textColor="@color/text_color"
+                android:textSize="22sp" />
+
+            <TextView
+                android:id="@+id/tv_user_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_user_name"
+                android:layout_marginLeft="@dimen/dp30"
+                android:layout_marginTop="@dimen/dp5"
+                android:textSize="15.4sp" />
+
+            <android.support.v7.widget.AppCompatSpinner
+                android:id="@+id/spn_lang"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_user_email"
+                android:layout_marginLeft="@dimen/dp20"
+                android:layout_marginTop="@dimen/dp7"
+                android:gravity="left"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+        <!-- menu options-->
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/menu_upper_layout">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:orientation="vertical">
+
+
+                <!-- Real estate offices-->
+                <RelativeLayout
+                    android:id="@+id/rl_estate_offices"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dp50"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="1"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_estate_offices"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_real_estate_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:singleLine="true"
+                        android:text="@string/event_orgnizer"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_real_estate_offices_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center_vertical"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+
+                </RelativeLayout>
+
+                <!-- Manage eCatalogues-->
+
+                <RelativeLayout
+                    android:id="@+id/rl_manage_e_catalogues"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="2"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:id="@+id/tv_manage_e_catalogues"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_manage_ecatalogues_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/manage_ecatalogues"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <ImageView
+                        android:id="@+id/iv_manage_e_catalogues_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_arrow_right_menu"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/tv_manage_e_catalogues_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+                <!-- Profile -->
+                <RelativeLayout
+                    android:id="@+id/rl_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:id="@+id/tv_login"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_profile_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/login_register"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- home -->
+                <RelativeLayout
+                    android:id="@+id/rl_home"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="3">
+
+                    <TextView
+                        android:id="@+id/tv_home"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/ic_home_black_24dp"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/home"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+                <!-- Shared eCatalogues-->
+                <RelativeLayout
+                    android:id="@+id/rl_real_estate_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="3">
+
+                    <TextView
+                        android:id="@+id/tv_real_estate_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_manage_ecatalogues_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/real_estate_news"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_real_estate_news_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+
+                <!-- Shared eCatalogues-->
+                <RelativeLayout
+                    android:id="@+id/rl_economic_news"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="3">
+
+                    <TextView
+                        android:id="@+id/tv_economic_news"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_manage_ecatalogues_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/economic_news"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_economic_news_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+
+                <!-- Submit Request-->
+                <RelativeLayout
+                    android:id="@+id/rl_submit_request"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="4">
+
+
+                    <TextView
+                        android:id="@+id/tv_submit_requests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_submit_request_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/submit_request"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <ImageView
+                        android:id="@+id/iv_submit_request_arrow"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:src="@mipmap/icon_arrow_right_menu"
+                        android:visibility="gone" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+                <!-- My Request-->
+                <RelativeLayout
+                    android:id="@+id/rl_my_request"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="5">
+
+                    <TextView
+                        android:id="@+id/tv_my_requests"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_my_request_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/my_reqeust"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_my_request_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- My offers-->
+                <RelativeLayout
+                    android:id="@+id/rl_my_received_offers"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="6">
+
+                    <TextView
+                        android:id="@+id/tv_my_received_offers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_my_offers_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/my_received_offers"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <TextView
+                        android:id="@+id/tv_received_offer_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- My offers-->
+                <RelativeLayout
+                    android:id="@+id/rl_my_sent_offers"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="6">
+
+                    <TextView
+                        android:id="@+id/tv_my_sent_offers"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_my_offers_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/my_sent_offers"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+
+                    <TextView
+                        android:id="@+id/tv_sent_offer_count"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:text="0"
+                        android:textColor="@color/red"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+
+                <!-- Profile -->
+                <RelativeLayout
+                    android:id="@+id/rl_profile"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="7">
+
+                    <TextView
+                        android:id="@+id/tv_my_profile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_profile_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/profile"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- Change Password-->
+                <RelativeLayout
+                    android:id="@+id/rl_change_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="8">
+
+
+                    <TextView
+                        android:id="@+id/tv_change_password"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_change_pass_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/change_password"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- invite -->
+                <RelativeLayout
+                    android:id="@+id/rl_invite"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="7">
+
+                    <TextView
+                        android:id="@+id/tv_invite"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@drawable/ic_share_black_24dp"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/invite"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/menu_divider"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/divider_color" />
+                </RelativeLayout>
+
+                <!-- Log out-->
+                <RelativeLayout
+                    android:id="@+id/rl_log_out"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:background="@color/white"
+                    android:clickable="true"
+                    android:paddingLeft="@dimen/dp20"
+                    android:paddingRight="@dimen/dp10"
+                    android:paddingTop="@dimen/dp10"
+                    android:tag="9">
+
+
+                    <TextView
+                        android:id="@+id/tv_log_out"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:drawableLeft="@mipmap/icon_logout_menu"
+                        android:drawablePadding="@dimen/dp10"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:text="@string/logout"
+                        android:textColor="@color/text_color"
+                        android:textSize="@dimen/normal_text_size" />
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+    </RelativeLayout>
+    <!--
+        <LinearLayout
+            android:id="@+id/ll_my_offer_sub_menu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_cell_height"
+                android:clickable="true"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp10"
+                android:paddingTop="@dimen/dp10"
+                android:tag="6">
+
+
+                <ImageView
+                    android:id="@+id/iv_back_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/menu_cell_height"
+                    android:layout_centerVertical="true"
+                    android:padding="@dimen/dp10"
+                    android:src="@mipmap/icon_back_black" />
+
+                <TextView
+                    android:id="@+id/tv_sub_my_offers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="5dp"
+                    android:layout_toRightOf="@+id/iv_back_offer"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/my_offers"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+
+            </RelativeLayout>
+            &lt;!&ndash; My offers&ndash;&gt;
+            <RelativeLayout
+                android:id="@+id/tv_received_offers"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_cell_height"
+                android:background="@drawable/menu_item_selector"
+                android:clickable="true"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp10"
+                android:paddingTop="@dimen/dp10"
+                android:tag="6">
+
+                <TextView
+                    android:id="@+id/tv_received_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/received_offers"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_received_offer_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/normal_text_size" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider_color"
+                    android:visibility="gone" />
+            </RelativeLayout>
+
+            &lt;!&ndash; My offers&ndash;&gt;
+            <RelativeLayout
+                android:id="@+id/tv_sent_offers"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/menu_cell_height"
+                android:background="@drawable/menu_item_selector"
+                android:clickable="true"
+                android:paddingLeft="@dimen/dp20"
+                android:paddingRight="@dimen/dp10"
+                android:paddingTop="@dimen/dp10"
+                android:tag="6">
+
+                <TextView
+                    android:id="@+id/tv_sent_offer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/dp10"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="@string/sent_offers"
+                    android:textColor="@color/text_color"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/tv_sent_offer_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/red"
+                    android:textSize="@dimen/normal_text_size" />
+
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height=".5dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/divider_color" />
+            </RelativeLayout>
+        </LinearLayout>-->
+</RelativeLayout>

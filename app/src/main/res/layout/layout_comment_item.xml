@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="@dimen/dp10">
+
+
+    <com.ossul.view.CircularImageView
+        android:id="@+id/civ_userIconChatMsg"
+        android:layout_width="@dimen/circular_image_in_listitem"
+        android:layout_height="@dimen/circular_image_in_listitem"
+        android:src="@mipmap/placeholder"
+        android:layout_alignParentRight="true" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/dp40"
+        android:background="@mipmap/cht_bx_white">
+
+        <TextView
+            android:id="@+id/txt_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="10dp"
+            android:singleLine="true"
+            android:textColor="@color/colorPrimary"
+            android:textSize="13.4sp" />
+
+
+        <TextView
+            android:id="@+id/txt_userChatMsg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/txt_userName"
+            android:lineSpacingMultiplier="1.25"
+            android:padding="@dimen/dp10"
+            android:textColor="@color/text_color"
+            android:textSize="15.4sp" />
+    </RelativeLayout>
+
+</RelativeLayout>
